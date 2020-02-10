@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnProccessZip = new MetroFramework.Controls.MetroButton();
             this.textDestFolder = new MetroFramework.Controls.MetroTextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.BtnAdd = new MetroFramework.Controls.MetroButton();
             this.btnSetDest = new MetroFramework.Controls.MetroButton();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
@@ -38,17 +39,16 @@
             this.dsSourceFiles = new MarkZip.data.DsSourceFiles();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.noDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listFilesDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zipDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFileSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSourceFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -127,6 +127,11 @@
             this.textDestFolder.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.textDestFolder.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.textDestFolder_ButtonClick);
             this.textDestFolder.TextChanged += new System.EventHandler(this.textDestFolder_TextChanged);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(MarkZip.ViewServices.MarkZipRepo);
+            this.bindingSource1.Sort = "";
             // 
             // BtnAdd
             // 
@@ -241,11 +246,28 @@
             this.metroStyleManager1.Owner = this;
             this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Purple;
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BackColor = System.Drawing.Color.Purple;
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(5, 68);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(590, 10);
+            this.metroPanel1.Style = MetroFramework.MetroColorStyle.Purple;
+            this.metroPanel1.TabIndex = 2;
+            this.metroPanel1.UseCustomBackColor = true;
+            this.metroPanel1.UseStyleColors = true;
+            this.metroPanel1.VerticalScrollbarBarColor = false;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
             // noDataGridViewTextBoxColumn1
             // 
             this.noDataGridViewTextBoxColumn1.DataPropertyName = "No";
             this.noDataGridViewTextBoxColumn1.FillWeight = 30F;
-            this.noDataGridViewTextBoxColumn1.Frozen = true;
             this.noDataGridViewTextBoxColumn1.HeaderText = "No";
             this.noDataGridViewTextBoxColumn1.Name = "noDataGridViewTextBoxColumn1";
             this.noDataGridViewTextBoxColumn1.ReadOnly = true;
@@ -274,29 +296,6 @@
             this.zipDataGridViewTextBoxColumn1.TrueValue = "1";
             this.zipDataGridViewTextBoxColumn1.Width = 30;
             // 
-            // metroPanel1
-            // 
-            this.metroPanel1.BackColor = System.Drawing.Color.Purple;
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(5, 68);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(590, 10);
-            this.metroPanel1.Style = MetroFramework.MetroColorStyle.Purple;
-            this.metroPanel1.TabIndex = 2;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.UseStyleColors = true;
-            this.metroPanel1.VerticalScrollbarBarColor = false;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(MarkZip.ViewServices.MarkZipRepo);
-            this.bindingSource1.Sort = "";
-            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -318,11 +317,11 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFileSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsSourceFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,11 +337,11 @@
         private MetroFramework.Controls.MetroButton btnSetDest;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroGrid metroGrid1;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn noDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn listFilesDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn zipDataGridViewTextBoxColumn1;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 

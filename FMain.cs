@@ -16,7 +16,6 @@ using MarkZip.ViewServices;
 namespace MarkZip {
     public partial class FMain:MetroFramework.Forms.MetroForm {
         string dsPathConfig = string.Empty;
-        //DsSourceFiles.ParameterRow drParamFolder => dsSourceFiles.Parameter.AsEnumerable().FirstOrDefault(r => r.Grup == "Config" && r.Nama == "DestinationFolder");
         MarkZipRepo markZipRepo { get; set; }
         public FMain() {
             InitializeComponent();
@@ -27,7 +26,6 @@ namespace MarkZip {
         }
         #region COntrol
         private void FrmMain_Load(object sender, EventArgs e) {
-            // LoadConfig();
             markZipRepo.LoadConfig();
             Debug.WriteLine($"---->{Properties.Resources.ResourceManager.GetObject("MetroFramework.Design.dll")}");
             Debug.WriteLine($"---->{Properties.Resources.ResourceManager.GetString("MetroFramework.Design.dll")}");
@@ -54,67 +52,8 @@ namespace MarkZip {
                 markZipRepo.Save();
             }
         }
-        #endregion
-        #region Services Method
-        //void LoadConfig() {
-        //    if(!File.Exists(dsPathConfig)) {
-        //        if(drParamFolder == null) {
-        //            dsSourceFiles.Parameter.Rows.Add("Config", "DestinationFolder", $@"{Directory.GetCurrentDirectory()}\FileZip.zip");
-        //            dsSourceFiles.Parameter.AcceptChanges();
-        //        }
-        //        dsSourceFiles.WriteXml(dsPathConfig, XmlWriteMode.WriteSchema);
-        //    }
-
-        //    dsSourceFiles.ReadXml(dsPathConfig, XmlReadMode.ReadSchema);
-        //    textDestFolder.Text = drParamFolder?.Nilai;
-
-
-        //}
-        //void Save() {
-        //    drParamFolder.Nilai = textDestFolder.Text;
-        //    if(dsSourceFiles.HasChanges()) {
-        //        dsSourceFiles.AcceptChanges();
-        //        dsSourceFiles.WriteXml(dsPathConfig, XmlWriteMode.WriteSchema);
-        //    }
-
-        //}
-        //void AddFiles() {
-        //    using(var ofd = new OpenFileDialog() { Multiselect = true }) {
-        //        if(ofd.ShowDialog() == DialogResult.OK) {
-        //            foreach(var folderFile in ofd.FileNames) {
-        //                dsSourceFiles.DtListFiles.Rows.Add(null, folderFile, 1);
-        //            }
-        //        }
-        //    }
-        //}
-        //void SelectDestFolder() {
-        //    using(var sfdZipfile = new SaveFileDialog() { Filter = "Zip Files|*.zip|All Files|*.*" }) {
-        //        if(sfdZipfile.ShowDialog() == DialogResult.OK) {
-        //            textDestFolder.Text = sfdZipfile.FileName;
-        //        }
-        //    }
-        //}
-        //void Proccess() {
-        //    try {
-        //        var fileList = dsSourceFiles.DtListFiles.Rows.Cast<DataRow>().ToList().Select(x => x.Field<string>(dsSourceFiles.DtListFiles.ListFilesColumn));
-        //        using(var zip = ZipFile.Open(drParamFolder?.Nilai, ZipArchiveMode.Create)) {
-        //            foreach(var row in dsSourceFiles.DtListFiles.AsEnumerable().ToList()) {
-        //                if(row.Zip == 1)
-        //                    zip.CreateEntryFromFile(row.ListFiles, Path.GetFileName(row.ListFiles), CompressionLevel.Optimal);
-
-        //            }
-        //        }
-        //        MessageBox.Show("Done");
-        //    } catch(Exception ex) {
-        //        MessageBox.Show(ex.Message);
-
-        //    }
-        //}
-        //bool SaveValidate() {
-        //    return (drParamFolder != null && dsSourceFiles.DtListFiles.Rows.Count > 0);
-        //}
-        #endregion
-
+  
+    
         private void textDestFolder_TextChanged(object sender, EventArgs e) {
             if(markZipRepo.drParamFolder != null)
                 markZipRepo.drParamFolder.Nilai = textDestFolder.Text;
@@ -143,5 +82,6 @@ namespace MarkZip {
           
                 markZipRepo.Save();
         }
+        #endregion
     }
 }
