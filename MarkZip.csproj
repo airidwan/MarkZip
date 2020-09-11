@@ -129,7 +129,9 @@
   <ItemGroup>
     <None Include="Resources\icons8_zip.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8_sidebar_menu_32px_1.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_7zip_16px.png" />
   </ItemGroup>

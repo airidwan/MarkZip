@@ -41,6 +41,7 @@ namespace MarkZip.ViewServices {
         }
         public MarkZipRepo() {
             dsPathConfig = $@".\{dsSourceFiles.DataSetName}.xsd";
+            //dsPathConfig = $@".\{}.xsd";
         }
         #endregion
         #region Services Method
@@ -91,7 +92,7 @@ namespace MarkZip.ViewServices {
                     foreach(var row in dsSourceFiles.DtListFiles.AsEnumerable().ToList()) {
                         if(row.Zip == 1)
                             zip.CreateEntryFromFile(row.ListFiles, Path.GetFileName(row.ListFiles), CompressionLevel.Optimal);
-
+                        
                     }
                 }
                 MessageBox.Show("Done");
